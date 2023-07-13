@@ -1,10 +1,13 @@
-#!bin/bash
 #include <stdio.h>
+/**
+*main - entry point of this program
+*
+*Return: 0 for success
+*
+*/
 
-int main() 
+int main(void)
 {
-    puts = "Programming is like building a multilingual puzzle";
-    puts(s);
-
-    return 0;
+puts("Programming is like building a multilingual puzzle\n");
+return (0);
 }
