@@ -1,5 +1,5 @@
 #!bin/bash
 git add .
-commit-m="u commit"
+read commit-m
 git commit -m "$commit-m"
 git push
