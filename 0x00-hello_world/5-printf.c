@@ -7,10 +7,7 @@
  */
 int main(void)
 {
-	printf("Roses are red,\n"
-	       "Violets are blue,\n"
-	       "Your program is a piece of art,\n"
-	       "And so are you.\n");
+	printf("with proper grammar, but the outcome is a piece of art,\n");
 
-	return (0);
+	return 0;
 }
