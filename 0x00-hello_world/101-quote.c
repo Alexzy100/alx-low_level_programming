@@ -3,7 +3,6 @@
 /**
  * main - Entry point of the program
  *
- * Description: Prints a specific message to the standard error
  * Return: Always 1 (indicating an error)
  */
 int main(void)
@@ -17,4 +16,3 @@ int main(void)
 
     return 1;
 }
-
