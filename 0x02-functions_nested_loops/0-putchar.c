@@ -5,7 +5,12 @@
  *
  *Prints "_putchar" followed by a new line
  *
-  Return: 0 (Success)
+ *Return: 0 (Success)
+ *main - Entry prints _putchar
+ *
+ *Prints "_putchar" followed by a new line
+ *
+ *Return: 0 (Success)
  */
 int main(void)
 {
