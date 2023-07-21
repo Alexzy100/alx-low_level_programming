@@ -9,6 +9,7 @@
  * Return: On success, the number of characters written.
  *         On error, -1 is returned.
  */
+void print_triangle(int size);
 int _putchar(char c);
 
 /**
