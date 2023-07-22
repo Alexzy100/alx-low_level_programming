@@ -1,23 +1,12 @@
+#include "main.h"
+
 /**
- * print_alphabet.c
+ * main - check the code
  *
- * Prints the alphabet, in lowercase, followed by a new line.
- *
- * Uses the Betty style.
+ * Return: Always 0.
  */
-
-#include <stdio.h>
-
-void print_alphabet(void)
+int main(void)
 {
-  char c;
-
-  for (c = 'a'; c <= 'z'; c++)
-  {
-    /* Indent the code using four spaces. */
-    printf("%c", c);
-  }
-
-  /* Print a new line. */
-  printf("\n");
+    print_alphabet();
+    return (0);
 }
