@@ -10,16 +10,28 @@
  */
 int main(void)
 {
-	putchar('0');
-	putchar('1');
-	putchar('2');
-	putchar('3');
-	putchar('4');
-	putchar('5');
-	putchar('6');
-	putchar('7');
-	putchar('8');
-	putchar('9');
+	char digit;
+
+	digit = '0';
+	putchar(digit);
+	digit = '0' + 1;
+	putchar(digit);
+	digit = '0' + 2;
+	putchar(digit);
+	digit = '0' + 3;
+	putchar(digit);
+	digit = '0' + 4;
+	putchar(digit);
+	digit = '0' + 5;
+	putchar(digit);
+	digit = '0' + 6;
+	putchar(digit);
+	digit = '0' + 7;
+	putchar(digit);
+	digit = '0' + 8;
+	putchar(digit);
+	digit = '0' + 9;
+	putchar(digit);
 	putchar('\n');
 
 	return (0);
