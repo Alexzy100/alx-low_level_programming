@@ -1,22 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-/**
- * main - Entry point of the program
+/** main - Entry point of the program
  *
  * Description: This program generates a random number
  * and prints whether it is positive, negative, or zero.
  *
  * Return: Always 0 (Success)
  */
-
 int main(void)
 {
     int n;
 
     srand(time(0));
-    n = rand() - (RAND_MAX / 2 + 1); 
+    n = rand() % 101 - 50; 
 
     printf("%d ", n);
 
@@ -26,7 +23,7 @@ int main(void)
     }
     else if (n == 0)
     {
-        printf("0 is zero\n");
+        printf("is zero\n");
     }
     else
     {
@@ -35,3 +32,4 @@ int main(void)
 
     return (0);
 }
+
