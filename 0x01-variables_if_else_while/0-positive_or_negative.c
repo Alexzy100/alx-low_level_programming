@@ -15,7 +15,7 @@ int main(void)
 	int n;
 
 	srand(time(0));
-	n = rand() % 2 - 1; /* Generate a random number between -100 and 100 */
+	n = rand() - RAND_MAX / 2; /* Generate a random number between -100 and 100 */
 
 	printf("%d ", n);
 
@@ -25,7 +25,7 @@ int main(void)
 	}
 	else if (n == 0)
 	{
-		printf("is zero\n");
+		printf("0 is zero\n");
 	}
 	else
 	{
