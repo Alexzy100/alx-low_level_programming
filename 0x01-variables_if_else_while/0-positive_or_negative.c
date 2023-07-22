@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-/* betty style doc for function main goes there */
+/**
+ * main - Generate a random number between -RAND_MAX/2
+ * * betty style doc for function main goes there 
+ */
 int main(void)
 {
     int n;
 
     srand(time(0));
-    n = rand() - (RAND_MAX / 2 + 1); /* Generate a random number between -RAND_MAX/2 and RAND_MAX/2 */
+    n = rand() - (RAND_MAX / 2 + 1); 
 
     printf("%d ", n);
 
@@ -18,7 +20,7 @@ int main(void)
     }
     else if (n == 0)
     {
-        printf("is zero\n");
+        printf("0 is zero\n");
     }
     else
     {
