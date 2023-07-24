@@ -1,20 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <time.h>
 
-void remove_null(char *str) {
-  int len = strlen(str);
-  for (int i = 0; i < len; i++) {
-    if (str[i] == '\0') {
-      str[i] = '\0';
-      break;
-    }
-  }
+#define PASSWORD_LENGTH 15
+
+// Function to generate a random character
+char getRandomChar() {
+    // Characters to choose from for the password
+    char characters[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    int len = sizeof(characters) - 1;
+    return characters[rand() % len];
 }
 
 int main() {
-  char str[] = "This is a string with a null byte.";
-  remove_null(str);
-  printf("%s\n", str);
-  return 0;
+    // Seed the random number generator with the current time
+    srand(time(NULL));
+
+    char password[PASSWORD_LENGTH + 1]; // +1 for null-terminator
+
+    // Generate the password
+    for (int i = 0; i < PASSWORD_LENGTH; i++) {
+        password[i] = getRandomChar();
+    }
+
+    password[PASSWORD_LENGTH] = '\0'; // Null-terminate the password string
+
+    // Print the generated password
+    printf("%s\n", password);
+
+    return 0;
 }
