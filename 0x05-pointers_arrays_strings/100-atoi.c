@@ -4,6 +4,7 @@
 /**
  * _atoi - Convert a string to an integer.
  * @s: The input string.
+ *
  * Return: The integer value converted from the string.
  */
 int _atoi(char *s)
@@ -29,3 +30,6 @@ int _atoi(char *s)
                 n = n * 10 + (*s - '0');
                 s++;
         }
+
+        return (n * sign);
+}
