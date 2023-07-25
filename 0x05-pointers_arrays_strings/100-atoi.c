@@ -1,3 +1,10 @@
+/**
+ * _atoi - Convert a string to an integer.
+ *
+ * @s: The input string.
+ *
+ * Return: The integer value converted from the string.
+ */
 int _atoi(char *s)
 {
     int sign = 1;
