@@ -1,26 +1,29 @@
-int _atoi(char *s)
-{
-    int sign = 1;
-    int n = 0;
+int main(void) {
+  int n;
 
-    while (*s == ' ')
-        s++;
+  n = _atoi("98");
+  printf("%d\n", n); // 98
 
-    if (*s == '-')
-    {
-        sign = -1;
-        s++;
-    }
-    else if (*s == '+')
-    {
-        s++;
-    }
+  n = _atoi("-402");
+  printf("%d\n", n); // -402
 
-    while (*s >= '0' && *s <= '9')
-    {
-        n = n * 10 + (*s - '0');
-        s++;
-    }
+  n = _atoi("          ------++++++-----+++++--98");
+  printf("%d\n", n); // -98
 
-    return (n * sign);
+  n = _atoi("214748364");
+  printf("%d\n", n); // 214748364
+
+  n = _atoi("0");
+  printf("%d\n", n); // 0
+
+  n = _atoi("Suite 402");
+  printf("%d\n", n); // 402
+
+  n = _atoi("         +      +    -    -98 Battery Street; San Francisco, CA 94111 - USA             ");
+  printf("%d\n", n); // -98
+
+  n = _atoi("---++++ -++ Sui - te -   402 #cisfun :)");
+  printf("%d\n", n); // 402
+
+  return 0;
 }
