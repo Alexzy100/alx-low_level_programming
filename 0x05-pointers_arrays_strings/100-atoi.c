@@ -30,5 +30,11 @@ int _atoi(char *s) {
     s++;
   }
 
+  if (n > INT_MAX) {
+    return INT_MAX;
+  } else if (n < INT_MIN) {
+    return INT_MIN;
+  }
+
   return sign * n;
 }
