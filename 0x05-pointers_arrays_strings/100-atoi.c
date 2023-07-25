@@ -1,3 +1,4 @@
+
 /**
  * _atoi - Converts a string to an integer.
  *
@@ -28,6 +29,12 @@ int _atoi(char *s) {
   while (*s >= '0' && *s <= '9') {
     n = n * 10 + (*s - '0');
     s++;
+  }
+
+  if (n > INT_MAX) {
+    return INT_MAX;
+  } else if (n < INT_MIN) {
+    return INT_MIN;
   }
 
   return sign * n;
