@@ -1,7 +1,7 @@
 /**
  * _atoi - Converts a string to an integer.
  *
- * @param s The string to convert.
+ * @param nptr The string to convert.
  *
  * @return The integer representation of the string.
  *
@@ -9,26 +9,25 @@
  *
  * @author Bard
  */
-  int atoi(const char *nptr); {
-  int sign = 1;
-  int n = 0;
+int _atoi(const char *nptr) {
+    int sign = 1;
+    int n = 0;
 
-  while (*s == ' ') {
-    s++;
-  }
+    while (*nptr == ' ') {
+        nptr++;
+    }
 
-  if (*s == '-') {
-    sign = -1;
-    s++;
-  } else if (*s == '+') {
-    sign = 1;
-    s++;
-  }
+    if (*nptr == '-') {
+        sign = -1;
+        nptr++;
+    } else if (*nptr == '+') {
+        nptr++;
+    }
 
-  while (*s >= '0' && *s <= '9') {
-    n = n * 10 + (*s - '0');
-    s++;
-  }
+    while (*nptr >= '0' && *nptr <= '9') {
+        n = n * 10 + (*nptr - '0');
+        nptr++;
+    }
 
-  return sign * n;
+    return sign * n;
 }
