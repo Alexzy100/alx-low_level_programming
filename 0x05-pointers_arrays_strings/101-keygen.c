@@ -1,26 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
+
+// Function to generate a random password
+void generate_password(char *password, int length) {
+    const char characters[] = "abcdefghijklmnopqrstuvwxyz0123456789";
+    int characters_count = strlen(characters);
+
+    srand(time(0));
+
+    for (int i = 0; i < length; i++) {
+        password[i] = characters[rand() % characters_count];
+    }
+
+    password[length] = '\0';
+}
 
 int main() {
-  srand(time(NULL));
-
-  char password[6];
-  for (int i = 0; i < 6; i++) {
-    int character = rand() % 3;
-    switch (character) {
-      case 0:
-        password[i] = 'a' + rand() % 26;
-        break;
-      case 1:
-        password[i] = '0' + rand() % 10;
-        break;
-      case 2:
-        password[i] = '!' + rand() % 5;
-        break;
-    }
-  }
-
-  printf("%s\n", password);
-  return 0;
+    char password[9]; // 8 characters + null terminator
+    generate_password(password, 8);
+    printf("%s\n", password);
+    return 0;
 }
