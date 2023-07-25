@@ -9,7 +9,7 @@
  *
  * @author Bard
  */
-int _atoi(char *s) {
+  int atoi(const char *nptr); {
   int sign = 1;
   int n = 0;
 
