@@ -6,6 +6,8 @@
  * @return The integer representation of the string.
  *
  * If the string does not contain a valid integer, the function returns 0.
+ *
+ * @author Bard
  */
 int _atoi(char *s) {
   int sign = 1;
@@ -19,6 +21,7 @@ int _atoi(char *s) {
     sign = -1;
     s++;
   } else if (*s == '+') {
+    sign = 1;
     s++;
   }
 
