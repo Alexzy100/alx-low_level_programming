@@ -1,29 +1,42 @@
-int _atoi(const char *s) {
-    int sign = 1;
-    int n = 0;
+#include <limits.h>
 
-    /* Skip over any leading whitespace characters */
-    while (*s == ' ') {
-        s++;
-    }
+/**
+ * _atoi - Converts a string to an integer.
+ *
+ * @param s The string to convert.
+ *
+ * @return The integer representation of the string.
+ *
+ * If the string does not contain a valid integer, the function returns 0.
+ *
+ * @author Bard
+ */
+int _atoi(char *s) {
+  int sign = 1;
+  int n = 0;
 
-    /* Handle sign characters */
-    while (*s == '-' || *s == '+') {
-        sign = (*s == '-') ? -sign : sign;
-        s++;
-    }
+  while (*s == ' ') {
+    s++;
+  }
 
-    /* Parse the integer value */
-    while (*s >= '0' && *s <= '9') {
-        /* Handling potential signed integer overflow */
-        if (n > INT_MAX / 10 || (n == INT_MAX / 10 && (*s - '0') > INT_MAX % 10)) {
-            /* Overflow occurred, return INT_MIN or INT_MAX based on the sign */
-            return sign > 0 ? INT_MAX : INT_MIN;
-        }
-        n = n * 10 + (*s - '0');
-        s++;
-    }
+  if (*s == '-') {
+    sign = -1;
+    s++;
+  } else if (*s == '+') {
+    sign = 1;
+    s++;
+  }
 
-    return sign * n;
+  while (*s >= '0' && *s <= '9') {
+    n = n * 10 + (*s - '0');
+    s++;
+  }
+
+  if (n > INT_MAX) {
+    return INT_MAX;
+  } else if (n < INT_MIN) {
+    return INT_MIN;
+  }
+
+  return sign * n;
 }
-
