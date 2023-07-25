@@ -25,7 +25,11 @@ int _atoi(const char *nptr) {
     }
 
     while (*nptr >= '0' && *nptr <= '9') {
-        n = n * 10 + (*nptr - '0');
+        // Handling potential signed integer overflow using __builtin_mul_overflow
+        if (__builtin_mul_overflow(n, 10, &n) || __builtin_add_overflow(n, (*nptr - '0'), &n)) {
+            // Overflow occurred, return 0 as per the function description
+            return 0;
+        }
         nptr++;
     }
 
