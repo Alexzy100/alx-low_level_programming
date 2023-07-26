@@ -1,16 +1,25 @@
+/**
+ * _strncat - Concatenates n bytes from src to dest.
+ * @dest: Pointer to the destination string.
+ * @src: Pointer to the source string.
+ * @n: Number of bytes to concatenate.
+ *
+ * Return: Pointer to the destination string.
+ */
 char *_strncat(char *dest, char *src, int n)
 {
-  int i;
-  char *p;
+	int i;
+	char *p;
 
-  p = dest;
-  while (*p)
-    p++;
+	p = dest;
 
-  for (i = 0; i < n && src[i]; i++)
-    *p++ = src[i];
+	while (*p)
+		p++;
 
-  *p = '\0';
+	for (i = 0; i < n && src[i]; i++)
+		*p++ = src[i];
 
-  return dest;
+	*p = '\0';
+
+	return dest;
 }
