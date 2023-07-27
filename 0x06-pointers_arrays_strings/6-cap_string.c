@@ -11,7 +11,6 @@ char *cap_string(char *str)
 	int i;
 	int is_word = 1;
 
-	/* Capitalize the first character, if it's a lowercase letter */
 	if (str[0] && islower(str[0]))
 	{
 		str[0] = toupper(str[0]);
