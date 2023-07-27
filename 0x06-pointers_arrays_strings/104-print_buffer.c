@@ -8,6 +8,8 @@
  */
 void print_buffer(char *b, int size)
 {
+	/* This is a blank line */
+
 	int i, j;
 
 	if (size <= 0)

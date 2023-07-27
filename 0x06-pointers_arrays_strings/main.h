@@ -1,3 +1,9 @@
+int main(void)
+{
+	char buffer[] = "This is a test";
+	print_buffer(buffer, sizeof(buffer));
+	return 0;
+}
 #ifndef MAIN_H
 #define MAIN_H
 
