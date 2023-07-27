@@ -1,23 +1,23 @@
-#include <stddef.h>
+#include <stdio.h>
 
-char *rot13(char *s)
-{
-    char *result = s;
-    int i = 0;
+char *rot13(char *s) {
+    char *ptr = s;
 
-    while (s[i])
-    {
-        int is_upper = (s[i] >= 'A' && s[i] <= 'Z');
-        int is_lower = (s[i] >= 'a' && s[i] <= 'z');
+    while (*ptr != '\0') {
+        char ch = *ptr;
 
-        if (is_upper || is_lower)
-        {
-            int base = is_upper ? 'A' : 'a';
-            s[i] = (s[i] - base + 13) % 26 + base;
+        /* Check if the character is an uppercase letter */
+        if (ch >= 'A' && ch <= 'Z') {
+            ch = ((ch - 'A' + 13) % 26) + 'A';
+        }
+        /* Check if the character is a lowercase letter */
+        else if (ch >= 'a' && ch <= 'z') {
+            ch = ((ch - 'a' + 13) % 26) + 'a';
         }
 
-        i++;
+        *ptr = ch;
+        ptr++;
     }
 
-    return result;
+    return s;
 }
