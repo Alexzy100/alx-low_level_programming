@@ -1,18 +1,24 @@
-#include "main.h"
-#include <stdio.h>
+#include <stdlib.h>
 
-/**
- * main - check the code for
- *
- * Return: Always 0.
- */
-int main(void)
+char *leet(char *s)
 {
-    char s[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\n";
-    char *p;
+    char *result = s;
 
-    p = leet(s);
-    printf("%s", p);
-    printf("%s", s);
-    return (0);
+    while (*s)
+    {
+        if (*s == 'a' || *s == 'A')
+            *s = '4';
+        else if (*s == 'e' || *s == 'E')
+            *s = '3';
+        else if (*s == 'o' || *s == 'O')
+            *s = '0';
+        else if (*s == 't' || *s == 'T')
+            *s = '7';
+        else if (*s == 'l' || *s == 'L')
+            *s = '1';
+
+        s++;
+    }
+
+    return result;
 }
