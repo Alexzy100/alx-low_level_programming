@@ -1,33 +1,22 @@
-#include <ctype.h>
+#include <stdio.h>
+#include <string.h>
 
-/**
- * cap_string - Capitalizes the first letter of each word in a string.
- * @str: The string to capitalize.
- *
- * Return: A pointer to the modified string.
- */
 char *cap_string(char *str)
 {
-	int i;
-	int is_word = 1;
-
-	if (str[0] && islower(str[0]))
-	{
-		str[0] = toupper(str[0]);
-	}
-
-	for (i = 1; str[i]; i++)
-	{
-		if (isspace(str[i]) || !isalpha(str[i - 1]))
-		{
-			is_word = 1;
-		}
-		else if (is_word)
-		{
-			str[i] = toupper(str[i]);
-			is_word = 0;
-		}
-	}
-
-	return (str);
+  int i;
+  for (i = 0; str[i] != '\0'; i++)
+  {
+    if (i == 0 || str[i - 1] == ' ' || str[i - 1] == '\t' ||
+        str[i - 1] == '\n' || str[i - 1] == ',' || str[i - 1] == ';' ||
+        str[i - 1] == '.' || str[i - 1] == '!' || str[i - 1] == '?' ||
+        str[i - 1] == '"' || str[i - 1] == '(' || str[i - 1] == ')' ||
+        str[i - 1] == '{' || str[i - 1] == '}')
+    {
+      if (str[i] >= 'a' && str[i] <= 'z')
+      {
+        str[i] -= 32;
+      }
+    }
+  }
+  return str;
 }
