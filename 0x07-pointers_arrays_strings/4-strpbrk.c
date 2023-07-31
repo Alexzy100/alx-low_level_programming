@@ -8,7 +8,6 @@
 char *_strpbrk(char *s, char *accept)
 {
 char *match;
-
 while (*s)
 {
 for (match = accept; *match; match++)
@@ -20,6 +19,5 @@ return (s);
 }
 s++;
 }
-
 return (s);
 }
